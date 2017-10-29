@@ -131,7 +131,7 @@ def write_csv(use_selenium=False, *args):
     name_add = 'Selenium' if use_selenium else 'Requests'
     with open('thNews'+name_add+'.csv', 'w') as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(['title', 'url', 'summary', 'date', 'pic', 'views', 'writetime'])
+        writer.writerow(['title', 'url', 'summary', 'date', 'pic', 'writetime'])
         writer.writerows(results)
 
 
@@ -195,11 +195,12 @@ def basic_scrape(use_selenium=False):
     pics = ['http://news.tsinghua.edu.cn'+pic for pic in pic_paths]
 
     # get the number of views for each article
-    views = get_views(use_selenium, pic_paths, th_html)
+    # views = get_views(use_selenium, pic_paths, th_html)
+    # news site appears to no longer display views
 
-    write_csv(use_selenium, titles, urls, summaries, dates, pics, views)
+    write_csv(use_selenium, titles, urls, summaries, dates, pics)
 
-    return([titles, urls, summaries, dates, pics, views])
+    return([titles, urls, summaries, dates, pics])
 
 def parse_th_article(url):
     """Takes a Tsinghua news article URL and gets the article info.
