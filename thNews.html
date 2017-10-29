@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>清华大学新闻网 - 头条新闻</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="thNews_files/base.css" rel="stylesheet" type="text/css">
+<link href="thNews_files/font.css" rel="stylesheet" type="text/css">
+<link href="thNews_files/inner.css" rel="stylesheet" type="text/css">
+<script src="thNews_files/jquery-1.js" type="text/javascript"></script><style type="text/css">
+:root .mod > ._jH + .rscontainer
+{ display: none !important; }</style>
+<link rel="stylesheet" href="thNews_files/slick.css">
+<script src="thNews_files/slick.js" type="text/javascript"></script>
+<script src="thNews_files/regexcut.js" type="text/javascript"></script>
+<link rel="stylesheet" href="thNews_files/owl.css">
+<script src="thNews_files/owl.js" type="text/javascript"></script>
+<script src="thNews_files/comm.js" type="text/javascript"></script>
+<!--[if lt IE 9]>
+<script src="/publish/thunews/js/html5.js" type="text/javascript"></script>
+<script src="/publish/thunews/js/json2.js" type="text/javascript"></script>
+<![endif]-->
+<script src="thNews_files/regex-cn.js" type="text/javascript"></script>
+<!--[if lt IE 8]>
+ <link rel="stylesheet" href="/publish/thunews/font/ie7/ie7.css">
+<!--<![endif]-->
+<script language="javascript" type="text/javascript">
+  window.onerror = function(){return true;};
+  function cutSummary(summaryStr,lengTh){
+    if(summaryStr.length>lengTh){
+   summaryStr=summaryStr.substring(0,lengTh)+"...";
+    }
+    document.write(summaryStr);
+  }
+ $(document).ready(function() {
+  $("a.nivo-nextNav").click();
+ });
+ </script>
+<script type="text/javascript">
+// 对Date的扩展，将 Date 转化为指定格式的String 
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
+// 例子： 
+// (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 
+// (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18 
+Date.prototype.Format = function(fmt) 
+{ 
+ //author: meizz 
+  var o = { 
+    "M+" : this.getMonth()+1,                 //月份 
+    "d+" : this.getDate(),                    //日 
+    "h+" : this.getHours(),                   //小时 
+    "m+" : this.getMinutes(),                 //分 
+    "s+" : this.getSeconds(),                 //秒 
+    "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+    "S"  : this.getMilliseconds()             //毫秒 
+  }; 
+  if(/(y+)/.test(fmt)) 
+    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+  for(var k in o) 
+    if(new RegExp("("+ k +")").test(fmt)) 
+  fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length))); 
+  return fmt; 
+}
+//2015.08 年.月
+function getYM(dtStr,id){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("yyyy.MM.dd");  
+var yyyy=time2.substr(0,7);
+$("#"+id).text(yyyy);
+return yyyy; 
+}
+//10 日期
+function getDay(dtStr,id){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("yyyy.MM.dd");
+var md=time2.substr(8); 
+$("#"+id).text(md);
+return md; 
+}
+//2015.08.10 年.月.日
+function getYMD(dtStr,id){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("yyyy.MM.dd");
+//var md=time2.substr(8);
+$("#"+id).text(time2);
+return time2; 
+}
+function getMdd(dtStr){
+var dtArr = dtStr.split("-");
+var dt = new Date(dtArr[0], dtArr[1]-1, dtArr[2]);
+//var time1 = dt.Format("yyyy-MM-dd hh:mm:ss");  
+var time2 = dt.Format("MM.dd.yyyy");
+var mdd=time2.substr(0,5); 
+$(".mdd").text(mdd);
+return mdd; 
+}
+
+</script>
+<script type="text/javascript">
+function getResData(fwl){
+ jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID="+fwl+"&"+Math.random(), function(data){
+   $(".itemlist_total_"+fwl).empty().text(data);
+ });
+};
+ getResData('20161125111440926399642');
+ getResData('20161124153021482822403');
+ getResData('20161122145022352519997');
+ getResData('20161123171411075671175');
+ getResData('20161122160953066330557');
+ getResData('20161122202918632829820');
+ getResData('20161122121028124838955');
+ getResData('20161121095048294737054');
+ getResData('20161120214925214249640');
+ getResData('20161118211238375604661');
+ getResData('20161117110018590202437');
+ getResData('20161117090911161188849');
+ getResData('20161116165236288738250');
+ getResData('20161114144139271904234');
+ getResData('20161114142313203693192');
+ getResData('20161114172418011284718');
+ getResData('20161112201433942549469');
+ getResData('20161111162022644779365');
+ getResData('20161111155919969251557');
+ getResData('20161110085518421655801');
+ getResData('20161109131818310837427');
+ getResData('20161108112239684414789');
+ getResData('20161107110150760655968');
+ getResData('20161107114007031336707');
+ getResData('20161104154548121682499');
+ getResData('20161104161655051798745');
+ getResData('20161104135434523190151');
+ getResData('20161104121542200694631');
+ getResData('20161104084928436307580');
+ getResData('20161103114818345858471');
+ getResData('20161102111258770207783');
+ getResData('20161103091619020900267');
+ getResData('20161102164748801103885');
+ getResData('20161102140923895181911');
+ getResData('20161102112028313963946');
+ getResData('20161101143647661697088');
+ getResData('20161101145840478931637');
+ getResData('20161101102656319953132');
+ getResData('20161101134648201938705');
+ getResData('20161031180054878626218');
+ getResData('20161031113728455816146');
+ getResData('20161028152744368658861');
+ getResData('20161028093015042883951');
+ getResData('20161027201723050402258');
+ getResData('20161026132427478534307');
+ getResData('20161026145519064183306');
+ getResData('20161026103849595727955');
+ getResData('20161025151542878927856');
+ getResData('20161024100713585454963');
+ getResData('20161024083051776846828');
+</script></head>
+<body>
+<header class="clearfix">
+ <section class="mainWrap">
+     <div class="topwraper relative clearfix">
+          <div class="ulink">
+                <ul class="clearfix">
+                     <li class="socialnet"><a href="http://weibo.com/tsinghua" class="circle" title="微博" target="_blamk"><i class="thunews-weibo"></i></a>
+                    </li><li class="socialnet"><a href="javascript:;" class="circle" title="微信"><i class="thunews-weixin"></i></a>
+                     <div class="socialwraper"><i><em></em></i><img src="thNews_files/weixin.jpg"></div>
+                    </li>
+                  
+                      <li class="socialnet"><a href="http://news.tsinghua.edu.cn/publish/thunews/10237/index.html" class="circle" title="rss订阅"><i class="thunews-rss"></i></a></li>
+                    <li class="mr"><a href="http://news.tsinghua.edu.cn/publish/thunewsen/index.html" class="en" target="_blank">ENGLISH</a></li>
+                    <li class="thuold mr"><a href="http://www.tsinghua.edu.cn/publish/news/index.html" target="_blank">怀念老版</a></li>
+                    <li class="thuhome mr"><a href="http://www.tsinghua.edu.cn/" target="_blank">清华主页</a></li>
+                </ul>
+            </div>
+            <a href="http://news.tsinghua.edu.cn/publish/thunews/index.html" class="logo"><img src="thNews_files/logo.png" alt="logo"></a>
+            <div class="search">
+               <form id="searchForm" target="_blank" action="http://search.tsinghua.edu.cn/web">
+<input name="query" type="text">
+<input name="ie" value="utf8" type="hidden">
+<input name="cid" value="3" type="hidden">
+ <a href="javascript:;" onclick="searchSub();"><i class="thunews-search"></i></a>
+</form>
+            </div>
+        </div>
+        </section>
+<script src="thNews_files/searchsub.js"></script> <nav class="navwrap yahei">
+ <section class="mainWrap">
+  <div id="smenu" class="smenu"><i class="thunews-bars"></i></div>
+  <script type="text/javascript">
+   jQuery(function(){
+    jQuery('#nav li a [class^=item]').removeClass('current');
+    jQuery('#nav li a.item9648').addClass('current');
+   });
+  </script>
+  <ul id="nav">
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/index.html" class="item0">首页</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/index.html" class="item9648 current">头条新闻</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/index.html" class="item10303">综合新闻</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9649/index.html" class="item9649">要闻聚焦</a>
+   <ul>
+    <i><em></em></i>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9658/index.html#dqwz">时讯快递</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9659/index.html#dqwz">学术科研</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9660/index.html#dqwz">教育教学</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9661/index.html#dqwz">招生就业</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9662/index.html#dqwz">交流合作</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9663/index.html#dqwz">观点报道</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9664/index.html#dqwz">社会服务</a></li>
+   </ul>
+   </li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9650/index.html" class="item9650">媒体清华</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9652/index.html" class="item9652">图说清华</a></li>
+   <li><a href="http://tv.tsinghua.edu.cn/" target="_blank">视频空间</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9656/index.html" class="item9656">清华人物</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9654/index.html" class="item9654">校园写意</a>
+   <ul>
+    <i><em></em></i>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9665/index.html#dqwz">广角透视</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9666/index.html#dqwz">校园生活</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9667/index.html#dqwz">文化漫谈</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9668/index.html#dqwz">清华史苑</a></li>
+    <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9669/index.html#dqwz">高教视点</a></li>
+   </ul>
+   </li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9655/index.html" class="item9655">专题新闻</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/10304/index.html" class="item10304">新闻排行</a></li>
+   <li><a href="http://news.tsinghua.edu.cn/publish/thunews/9657/index.html" class="item9657">新闻合集</a></li>
+   </ul>
+   
+ </section>
+</nav></header>
+<div class="content yahei subchannel">
+ <div class="mainWrap clearfix">
+ <section class="colunm1" id="datalist_sec2">
+     <h2 class="channeltitle">头条新闻</h2>
+        <ul class="picnewslist">
+            <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161125111440926399642&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161125111440926399642").empty();
+              $("#itemlist_total_20161125111440926399642").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161125111440926399642/20161125111440926399642_.html" target="_blank" class="jiequ">清华航院李群仰课题组等揭示超薄二维材料摩擦演化之谜</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161125111440926399642/20161125111440926399642_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-1">25</font></span>
+      <font class="ym" id="ym-1">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161125111954532883008.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("清华大学航天航空学院李群仰课题组与合作者于11月24日在《自然》在线发表题为“石墨烯摩擦接触界面的状态演化”（The evolving quality of frictional contact with graphene）表明，界面摩擦对于二维材料存在独特的机理：二维材料由于其超薄的几何特性和超大的柔性，能够通过改变自身构型来影响接触界面的钉扎状态，进而可从界面的“质”而不仅是“量”上来调控其摩擦性能。",180);</script>清
+华大学航天航空学院李群仰课题组与合作者于11月24日在《自然》在线发表题为“石墨烯摩擦接触界面的状态演化”（The evolving 
+quality of frictional contact with 
+graphene）表明，界面摩擦对于二维材料存在独特的机理：二维材料由于其超薄的几何特性和超大的柔性，能够通过改变自身构型来影响接触界面的钉扎状
+态，进而可...</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161125111440926399642"><span id="itemlist_total_20161125111440926399642">3028</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161122202918632829820&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161122202918632829820").empty();
+              $("#itemlist_total_20161122202918632829820").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161122202918632829820/20161122202918632829820_.html" target="_blank" class="jiequ">清华大学举办全校干部学习班 深入学习贯彻学习党的十八届六中全会精神</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161122202918632829820/20161122202918632829820_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-2">22</font></span>
+      <font class="ym" id="ym-2">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161122203845082708760.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("11月18日至19日，清华大学举办2016年全校干部学习班，深入学习党的十八届六中全会精神和《胡锦涛文选》。党委书记陈旭在总结会上讲话，校长邱勇主持学习总结会。党委常务副书记、副校长姜胜耀作开班动员并主持学习辅导报告会，党委副书记邓卫主持学习班交流会和有关学习辅导报告会。",180);</script>11
+月18日至19日，清华大学举办2016年全校干部学习班，深入学习党的十八届六中全会精神和《胡锦涛文选》。党委书记陈旭在总结会上讲话，校长邱勇主持
+学习总结会。党委常务副书记、副校长姜胜耀作开班动员并主持学习辅导报告会，党委副书记邓卫主持学习班交流会和有关学习辅导报告会。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161122202918632829820"><span id="itemlist_total_20161122202918632829820">2708</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161120214925214249640&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161120214925214249640").empty();
+              $("#itemlist_total_20161120214925214249640").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161120214925214249640/20161120214925214249640_.html" target="_blank" class="jiequ">清华大学提供总体技术的国家安全指挥控制系统为厄瓜多尔提供重要安全保障</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161120214925214249640/20161120214925214249640_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-3">20</font></span>
+      <font class="ym" id="ym-3">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161120215436392657745.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("11月16日，习近平主席在对厄瓜多尔进行国事访问前在厄瓜多尔《电讯报》发表题为《搭建中厄友好合作的新桥》的署名文章，特别提到：“我高兴地得知，在这次抗震救灾中，中国提供设备技术并负责建设的厄瓜多尔公共安全服务系统发挥了重要作用。作为指挥中枢，厄瓜多尔公共安全服务系统高效处理了大量信息，及时发出一道道指令，挽救了许多生命，降低了灾害带来的损失。”文中所说的公共安全服务系统，正是由清华大学公共安全研究院提供总体技术支持，清华控股旗下北京辰安科技股份有限公司研发的国家安全指挥控制系统（ECU911）。",180);</script>11
+月16日，习近平主席在对厄瓜多尔进行国事访问前在厄瓜多尔《电讯报》发表题为《搭建中厄友好合作的新桥》的署名文章，特别提到：“我高兴地得知，在这次
+抗震救灾中，中国提供设备技术并负责建设的厄瓜多尔公共安全服务系统发挥了重要作用。作为指挥中枢，厄瓜多尔公共安全服务系统高效处理了大量信息，及时发
+出一道道指令，挽救了许多生命，降低了灾害带来的损失。”文中所说的公共...</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161120214925214249640"><span id="itemlist_total_20161120214925214249640">3617</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161118211238375604661&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161118211238375604661").empty();
+              $("#itemlist_total_20161118211238375604661").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161118211238375604661/20161118211238375604661_.html" target="_blank" class="jiequ">“可扩展大气动力模拟”联合成果获高性能计算应用领域“戈登·贝尔”奖</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161118211238375604661/20161118211238375604661_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-4">18</font></span>
+      <font class="ym" id="ym-4">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161118212549066134025.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("11月17日，在美国盐湖城召开的全球超级计算大会（SC2016）上，中科院软件所杨超和清华大学计算机系薛巍、地球系统科学研究中心付昊桓等共同领导的团队所完成的“千万核可扩展大气动力学全隐式模拟”获得“戈登·贝尔”奖，实现了该奖创办30年来我国在此大奖上零的突破，成为我国高性能计算应用发展的新里程碑。",180);</script>11
+月17日，在美国盐湖城召开的全球超级计算大会（SC2016）上，中科院软件所杨超和清华大学计算机系薛巍、地球系统科学研究中心付昊桓等共同领导的团
+队所完成的“千万核可扩展大气动力学全隐式模拟”获得“戈登·贝尔”奖，实现了该奖创办30年来我国在此大奖上零的突破，成为我国高性能计算应用发展的新
+里程碑。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161118211238375604661"><span id="itemlist_total_20161118211238375604661">5925</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161117090911161188849&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161117090911161188849").empty();
+              $("#itemlist_total_20161117090911161188849").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161117090911161188849/20161117090911161188849_.html" target="_blank" class="jiequ">清华张奇伟课题组等为超分辨显微技术引入偏振新维度</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161117090911161188849/20161117090911161188849_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-5">17</font></span>
+      <font class="ym" id="ym-5">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161117091926006846722.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("近日，清华信息国家实验室的张奇伟教授课题组及北京大学、澳大利亚悉尼科技大学的合作者，共同提出了一种新的基于偏振反解调的超分辨偶极子取向解析技术（Super-Resolution Dipole Orientation Mapping via Polarization Demodulation），不仅为超分辨提供了一种全新的维度，而且为本领域近期的一个热点争论提供了解答。",180);</script>近
+日，清华信息国家实验室的张奇伟教授课题组及北京大学、澳大利亚悉尼科技大学的合作者，共同提出了一种新的基于偏振反解调的超分辨偶极子取向解析技术
+（Super-Resolution Dipole Orientation Mapping via Polarization 
+Demodulation），不仅为超分辨提供了一种全新的维度，而且为本领域近期的一个热点争论提...</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161117090911161188849"><span id="itemlist_total_20161117090911161188849">4731</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161114135843940539734&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161114135843940539734").empty();
+              $("#itemlist_total_20161114135843940539734").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/10512/index.html" target="_blank" class="jiequ">【专题】学习宣传贯彻党的十八届六中全会精神</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/10512/index.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-6">14</font></span>
+      <font class="ym" id="ym-6">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161114140009879961789.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("校党委下发关于认真学习宣传贯彻十八届六中全会精神的通知，要求全校各级党组织、全体共产党员和广大师生员工紧密团结在以习近平同志为核心的党中央周围，以高度的政治责任感和使命感，紧密联系学校工作实际，切实学习好、宣传好、贯彻好党的十八届六中全会精神，进一步深化全面从严治党、提高党建科学化水平，进一步推进综合改革、加快世界一流大学建设步伐。",180);</script>校
+党委下发关于认真学习宣传贯彻十八届六中全会精神的通知，要求全校各级党组织、全体共产党员和广大师生员工紧密团结在以习近平同志为核心的党中央周围，以
+高度的政治责任感和使命感，紧密联系学校工作实际，切实学习好、宣传好、贯彻好党的十八届六中全会精神，进一步深化全面从严治党、提高党建科学化水平，进
+一步推进综合改革、加快世界一流大学建设步伐。</p>
+                        <!-- <div class="thumb"><i class="thunews-thumbs-o-up"></i>23<i class="thunews-eye"></i> <font id="font_itemlist_total_20161114135843940539734"><span id="itemlist_total_20161114135843940539734"></span></font></div>--> 
+                    </div>
+                    
+                </figure>
+            </li>
+               <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161112201433942549469&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161112201433942549469").empty();
+              $("#itemlist_total_20161112201433942549469").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161112201433942549469/20161112201433942549469_.html" target="_blank" class="jiequ">邱勇率团访问印度尼西亚 围绕“一带一路”推动教育与文化交流</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161112201433942549469/20161112201433942549469_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-7">12</font></span>
+      <font class="ym" id="ym-7">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161112201538262841013.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("11月9-10日，清华大学校长邱勇访问印度尼西亚，与印尼政府签订合作意向，与教育界和实业界深入交流，推动清华大学在印度尼西亚的教育与文化拓展，为“一带一路”国家战略提供人才和智力支撑。副校长、教务长杨斌参加部分访问活动。",180);</script>11月9-10日，清华大学校长邱勇访问印度尼西亚，与印尼政府签订合作意向，与教育界和实业界深入交流，推动清华大学在印度尼西亚的教育与文化拓展，为“一带一路”国家战略提供人才和智力支撑。副校长、教务长杨斌参加部分访问活动。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161112201433942549469"><span id="itemlist_total_20161112201433942549469">3544</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161110085518421655801&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161110085518421655801").empty();
+              $("#itemlist_total_20161110085518421655801").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161110085518421655801/20161110085518421655801_.html" target="_blank" class="jiequ">邱勇率团访问马来西亚  推动教育与文化交流</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161110085518421655801/20161110085518421655801_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-8">10</font></span>
+      <font class="ym" id="ym-8">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161110091737579381267.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("11月7-8日，清华大学校长邱勇率团访问马来西亚，出席了在马来西亚巴生兴华中学举办的清华大学—马来西亚华文独立中学校长论坛并发表演讲，访问了马来西亚拉曼大学学院并见证了两校签署合作备忘录，会见了马来西亚工商界代表并同当地的清华校友座谈交流，全方位推动我校与马来西亚教育界和工商界的合作，夯实两国人文交流的基础，助力我国“一带一路”战略的顺利推进。",180);</script>11
+月7-8日，清华大学校长邱勇率团访问马来西亚，出席了在马来西亚巴生兴华中学举办的清华大学—马来西亚华文独立中学校长论坛并发表演讲，访问了马来西亚
+拉曼大学学院并见证了两校签署合作备忘录，会见了马来西亚工商界代表并同当地的清华校友座谈交流，全方位推动我校与马来西亚教育界和工商界的合作，夯实两
+国人文交流的基础，助力我国“一带一路”战略的顺利推进。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161110085518421655801"><span id="itemlist_total_20161110085518421655801">4078</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161104121542200694631&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161104121542200694631").empty();
+              $("#itemlist_total_20161104121542200694631").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161104121542200694631/20161104121542200694631_.html" target="_blank" class="jiequ">清华大学与深圳市合作共建清华大学深圳国际校区</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161104121542200694631/20161104121542200694631_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-9">04</font></span>
+      <font class="ym" id="ym-9">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161104122141235297838.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("11月4日，清华大学与深圳市人民政府在广州签署协议，在清华大学深圳研究生院、清华-伯克利深圳学院的办学基础上，进一步深化合作、拓展升级，共建清华大学深圳国际校区(Tsinghua University Shenzhen Global Campus, TUSGC，以下简称“国际校区”)。中共中央政治局委员、广东省委书记胡春华，广东省委副书记、省长朱小丹，广东省委副书记、深圳市委书记马兴瑞，清华大学党委书记陈旭等出席签字仪式，清华大学校长邱勇和深圳市长许勤代表双方签署了合作协议。",180);</script>11
+月4日，清华大学与深圳市人民政府在广州签署协议，在清华大学深圳研究生院、清华-伯克利深圳学院的办学基础上，进一步深化合作、拓展升级，共建清华大学
+深圳国际校区(Tsinghua University Shenzhen Global Campus, 
+TUSGC，以下简称“国际校区”)。中共中央政治局委员、广东省委书记胡春华，广东省委副书记、省长朱小丹，广东省...</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161104121542200694631"><span id="itemlist_total_20161104121542200694631">8298</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161103114818345858471&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161103114818345858471").empty();
+              $("#itemlist_total_20161103114818345858471").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161103114818345858471/20161103114818345858471_.html" target="_blank" class="jiequ">清华谭旭课题组发文阐明遗传性大疱性表皮松解症的发病机制</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161103114818345858471/20161103114818345858471_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-10">03</font></span>
+      <font class="ym" id="ym-10">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161103115252089635162.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("清华大学药学院和医学院传染病中心谭旭课题组与北京大学第一医院杨勇、林志淼课题组合作，在国际上首先确定了遗传性大疱性表皮松解症的一种致病基因KLHL24及其发病机理。该研究同时发现，KLHL24是调节表皮结构分化及蛋白代谢稳态的重要基因，从而揭示了皮肤角蛋白泛素化的信号传导通路，并且为角蛋白异常性疾病治疗提供了新途径。",180);</script>清
+华大学药学院和医学院传染病中心谭旭课题组与北京大学第一医院杨勇、林志淼课题组合作，在国际上首先确定了遗传性大疱性表皮松解症的一种致病基因
+KLHL24及其发病机理。该研究同时发现，KLHL24是调节表皮结构分化及蛋白代谢稳态的重要基因，从而揭示了皮肤角蛋白泛素化的信号传导通路，并且
+为角蛋白异常性疾病治疗提供了新途径。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161103114818345858471"><span id="itemlist_total_20161103114818345858471">3792</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161102164748801103885&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161102164748801103885").empty();
+              $("#itemlist_total_20161102164748801103885").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161102164748801103885/20161102164748801103885_.html" target="_blank" class="jiequ">清华大学美术学院纪念建院60周年</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161102164748801103885/20161102164748801103885_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-11">02</font></span>
+      <font class="ym" id="ym-11">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161102165138831813036.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("11月1日，清华大学美术学院（原中央工艺美术学院）建院60周年纪念大会在大礼堂举行。校长邱勇，党委书记陈旭，中国文联副主席、中央文史馆副馆长、中国美协副主席、清华大学美术学院名誉院长冯远，校务委员会副主任谢维和，清华大学原副校长、美术学院原院长、中国美协顾问王明旨，国内外兄弟院校代表，清华美院离退休教师代表，校友，在职教师、在校生代表等近1000人出席。大会由美院党委书记李功强主持。",180);</script>11
+月1日，清华大学美术学院（原中央工艺美术学院）建院60周年纪念大会在大礼堂举行。校长邱勇，党委书记陈旭，中国文联副主席、中央文史馆副馆长、中国美
+协副主席、清华大学美术学院名誉院长冯远，校务委员会副主任谢维和，清华大学原副校长、美术学院原院长、中国美协顾问王明旨，国内外兄弟院校代表，清华美
+院离退休教师代表，校友，在职教师、在校生代表等近1000人出席。大会...</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161102164748801103885"><span id="itemlist_total_20161102164748801103885">3455</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161101134648201938705&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161101134648201938705").empty();
+              $("#itemlist_total_20161101134648201938705").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161101134648201938705/20161101134648201938705_.html" target="_blank" class="jiequ">清华大学召开第二次人才工作会议</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161101134648201938705/20161101134648201938705_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-12">01</font></span>
+      <font class="ym" id="ym-12">2016.11</font>
+                    </div>
+     
+                     <img src="thNews_files/20161101135052940487607.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("10月28日下午，清华大学第二次人才工作会议在主楼后厅召开。校长邱勇出席会议并做主题报告，校党委书记陈旭主持会议并作总结讲话。",180);</script>10月28日下午，清华大学第二次人才工作会议在主楼后厅召开。校长邱勇出席会议并做主题报告，校党委书记陈旭主持会议并作总结讲话。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161101134648201938705"><span id="itemlist_total_20161101134648201938705">3065</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161031180054878626218&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161031180054878626218").empty();
+              $("#itemlist_total_20161031180054878626218").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161031180054878626218/20161031180054878626218_.html" target="_blank" class="jiequ">清华大学医学院举办成立十五周年系列活动</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161031180054878626218/20161031180054878626218_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-13">31</font></span>
+      <font class="ym" id="ym-13">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161031181714152496427.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("10月29日，清华大学医学院举办成立15周年系列活动。校党委常务副书记、副校长姜胜耀出席了在大礼堂举办的庆祝大会并致辞。医学院党委书记洪波主持大会。",180);</script>10月29日，清华大学医学院举办成立15周年系列活动。校党委常务副书记、副校长姜胜耀出席了在大礼堂举办的庆祝大会并致辞。医学院党委书记洪波主持大会。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161031180054878626218"><span id="itemlist_total_20161031180054878626218">2411</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161026103849595727955&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161026103849595727955").empty();
+              $("#itemlist_total_20161026103849595727955").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161026103849595727955/20161026103849595727955_.html" target="_blank" class="jiequ">清华大学建筑学院喜迎建院（系）70周年</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161026103849595727955/20161026103849595727955_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-14">26</font></span>
+      <font class="ym" id="ym-14">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161026133537652538987.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("10月22日，清华大学建筑学院建院（系）70周年纪念大会在大礼堂举行，“继往·开来——清华建筑教育70年与当代中国”主题研讨会同期举行。住房和城乡建设部副部长黄艳，清华大学校长邱勇、党委副书记邓卫、老领导方惠坚，两院院士吴良镛，中国工程院院士关肇邺、张锦秋、马国馨、傅熹年、王瑞珠，中国国家博物馆馆长吕章申，以及兄弟院校代表、校友和师生代表等700余人出席大会，一同回首清华建筑70年峥嵘岁月，共绘第三次跨越发展新蓝图。",180);</script>10
+月22日，清华大学建筑学院建院（系）70周年纪念大会在大礼堂举行，“继往·开来——清华建筑教育70年与当代中国”主题研讨会同期举行。住房和城乡建
+设部副部长黄艳，清华大学校长邱勇、党委副书记邓卫、老领导方惠坚，两院院士吴良镛，中国工程院院士关肇邺、张锦秋、马国馨、傅熹年、王瑞珠，中国国家博
+物馆馆长吕章申，以及兄弟院校代表、校友和师生代表等700余人出席大会...</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161026103849595727955"><span id="itemlist_total_20161026103849595727955">5930</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161024083051776846828&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161024083051776846828").empty();
+              $("#itemlist_total_20161024083051776846828").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161024083051776846828/20161024083051776846828_.html" target="_blank" class="jiequ">朱镕基会见清华经管学院顾问委员会委员</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161024083051776846828/20161024083051776846828_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-15">24</font></span>
+      <font class="ym" id="ym-15">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161024083302809898275.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("2016年10月21日下午，中共中央政治局原常委、国务院原总理、清华大学经济管理学院首任院长、学院顾问委员会名誉主席朱镕基在钓鱼台国宾馆会见了参加清华大学经济管理学院顾问委员会2016年会议的顾问委员。朱镕基夫人劳安，中共中央政治局委员、国务院副总理刘延东，中共中央政治局委员、国务院副总理马凯，全国政协副主席陈元一同会见。",180);</script>2016
+年10月21日下午，中共中央政治局原常委、国务院原总理、清华大学经济管理学院首任院长、学院顾问委员会名誉主席朱镕基在钓鱼台国宾馆会见了参加清华大
+学经济管理学院顾问委员会2016年会议的顾问委员。朱镕基夫人劳安，中共中央政治局委员、国务院副总理刘延东，中共中央政治局委员、国务院副总理马凯，
+全国政协副主席陈元一同会见。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161024083051776846828"><span id="itemlist_total_20161024083051776846828">11494</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161023085330568952403&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161023085330568952403").empty();
+              $("#itemlist_total_20161023085330568952403").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161023085330568952403/20161023085330568952403_.html" target="_blank" class="jiequ">邱勇、陈旭河北省调研访问 签署科研创新基地合作备忘录</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161023085330568952403/20161023085330568952403_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-16">23</font></span>
+      <font class="ym" id="ym-16">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161023090625790726870.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("10月19日，清华大学校长邱勇、党委书记陈旭一行前往石家庄，会见了河北省省委书记、省人大常委会主任赵克志，省委副书记、省长张庆伟，省委常委、常务副省长袁桐利等河北省领导，参观了“河北省与清华大学合作三十年巡礼”展览。双方签署了清华科研创新基地合作备忘录。",180);</script>10月19日，清华大学校长邱勇、党委书记陈旭一行前往石家庄，会见了河北省省委书记、省人大常委会主任赵克志，省委副书记、省长张庆伟，省委常委、常务副省长袁桐利等河北省领导，参观了“河北省与清华大学合作三十年巡礼”展览。双方签署了清华科研创新基地合作备忘录。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161023085330568952403"><span id="itemlist_total_20161023085330568952403">6253</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161022134508553969914&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161022134508553969914").empty();
+              $("#itemlist_total_20161022134508553969914").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161022134508553969914/20161022134508553969914_.html" target="_blank" class="jiequ">施一公获何梁何利科学与技术成就奖 张希郑纬民获科学与技术进步奖</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161022134508553969914/20161022134508553969914_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-17">22</font></span>
+      <font class="ym" id="ym-17">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161022134709024655156.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("清华大学生命科学学院施一公院士荣获何梁何利科学与技术成就奖，并代表获奖人作简短演讲。清华化学系张希院士和计算机系郑纬民教授荣获何梁何利科学与技术进步奖。",180);</script>清华大学生命科学学院施一公院士荣获何梁何利科学与技术成就奖，并代表获奖人作简短演讲。清华化学系张希院士和计算机系郑纬民教授荣获何梁何利科学与技术进步奖。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161022134508553969914"><span id="itemlist_total_20161022134508553969914">7831</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161019192103208434226&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161019192103208434226").empty();
+              $("#itemlist_total_20161019192103208434226").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161019192103208434226/20161019192103208434226_.html" target="_blank" class="jiequ">清华大学罗永章团队发现全新广谱肿瘤标志物并获准用于临床</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161019192103208434226/20161019192103208434226_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-18">19</font></span>
+      <font class="ym" id="ym-18">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161019194707595698850.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("2013年，清华大学罗永章团队通过肺癌临床试验在世界上首次证明肿瘤标志物血浆热休克蛋白90α（Hsp90α）可用于肝癌患者的检测；经过在医疗机构的推广使用，现在这项成果已被国家食品药品监督管理总局批准在临床中使用，这标志着首个由我国科学家定义、并获准用于临床的广谱肿瘤标志物诞生，对提高癌症诊疗水平具有深远意义。",180);</script>2013
+年，清华大学罗永章团队通过肺癌临床试验在世界上首次证明肿瘤标志物血浆热休克蛋白90α（Hsp90α）可用于肝癌患者的检测；经过在医疗机构的推广使
+用，现在这项成果已被国家食品药品监督管理总局批准在临床中使用，这标志着首个由我国科学家定义、并获准用于临床的广谱肿瘤标志物诞生，对提高癌症诊疗水
+平具有深远意义。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161019192103208434226"><span id="itemlist_total_20161019192103208434226">5738</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161017153636173741876&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161017153636173741876").empty();
+              $("#itemlist_total_20161017153636173741876").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161017153636173741876/20161017153636173741876_.html" target="_blank" class="jiequ">清华大学工程物理系喜迎建系60周年</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161017153636173741876/20161017153636173741876_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-19">17</font></span>
+      <font class="ym" id="ym-19">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161017154556981420169.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("10月16日，清华大学工程物理系在大礼堂举行纪念建系60周年活动。工物系1964届系友、最高人民检察院原检察长贾春旺，中国核试验基地司令员吴应强，中国核工业集团公司总经理钱智民，中国工程物理研究院副院长赖新春等嘉宾与工物系校友、师生们欢聚一堂，回首峥嵘岁月，共绘美好蓝图。清华大学党委书记陈旭、常务副校长程建平、党委副书记史宗恺及学校老领导王大中、滕藤、梁尤能、康克军等出席活动。",180);</script>10
+月16日，清华大学工程物理系在大礼堂举行纪念建系60周年活动。工物系1964届系友、最高人民检察院原检察长贾春旺，中国核试验基地司令员吴应强，中
+国核工业集团公司总经理钱智民，中国工程物理研究院副院长赖新春等嘉宾与工物系校友、师生们欢聚一堂，回首峥嵘岁月，共绘美好蓝图。清华大学党委书记陈
+旭、常务副校长程建平、党委副书记史宗恺及学校老领导王大中、滕藤、梁尤能...</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161017153636173741876"><span id="itemlist_total_20161017153636173741876">10897</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                    <script language="javascript" type="text/javascript">
+        $(document).ready(function(){
+          getResData();
+          function getResData(){
+            jQuery.get("/application/visitor/article_list_visitors_2.jsp?articleID=20161016121045588878601&"+Math.random(), function(data){
+            
+              $("#itemlist_total_20161016121045588878601").empty();
+              $("#itemlist_total_20161016121045588878601").append(data);
+                 
+            });
+          };
+        });
+        </script>
+        <li class="clearfix">
+             <figure>
+                 <figcaption><a href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161016121045588878601/20161016121045588878601_.html" target="_blank" class="jiequ">国务委员常万全调研清华大学国防教育</a></figcaption>
+                 <a class="picwraper" href="http://news.tsinghua.edu.cn/publish/thunews/9648/2016/20161016121045588878601/20161016121045588878601_.html" target="_blank">
+                    <div class="mtime">      <span><font class="dd" id="dd-20">16</font></span>
+      <font class="ym" id="ym-20">2016.10</font>
+                    </div>
+     
+                     <img src="thNews_files/20161016124436483449284.jpg">
+                    </a>
+                 <div class="contentwraper">
+          <p><script language="javascript" type="text/javascript">cutSummary("10月13日下午，国务委员、中央军委委员、国防部部长常万全到清华大学调研指导国防教育工作。清华大学党委书记陈旭、校长邱勇、党委副书记史宗恺等汇报了有关情况。",180);</script>10月13日下午，国务委员、中央军委委员、国防部部长常万全到清华大学调研指导国防教育工作。清华大学党委书记陈旭、校长邱勇、党委副书记史宗恺等汇报了有关情况。</p>
+                         <div class="thumb"><!--<i class="thunews-thumbs-o-up"></i>23--> <i class="thunews-eye"></i> <font id="font_itemlist_total_20161016121045588878601"><span id="itemlist_total_20161016121045588878601">9235</span></font></div>
+                    </div>
+                    
+                </figure>
+            </li>
+                   </ul>
+  
+       <script type="text/javascript">
+var strUrl = window.location.href;
+var curPage=1;
+var pageCount = 22;//total pages count
+if(strUrl.lastIndexOf('index_')!=-1) 
+ curPage=parseInt(strUrl.substring(strUrl.lastIndexOf('_')+1,strUrl.lastIndexOf('.')));//current page number
+var pageStr = "<div class=\"pager\">";
+if(pageCount>1){
+ pageStr += '<a href="javascript:;" class="p" title="前一页" onclick="doGo('+(curPage-1)+');">«</a>';
+}
+if(pageCount <= 9){
+ for(var i=0;i<pageCount;i++){
+  var currentClass = ((i+1)==curPage)?"current":"";
+  pageStr += '<a href="javascript:;" class="'+currentClass+'" onclick="doGo('+(i+1)+')">'+(i+1)+'</a>';
+ }
+}else if(pageCount > 9 && (curPage + 4) <= pageCount && (curPage - 4) <= 0){
+ for(var i=0;i<9;i++){
+  var currentClass = ((i+1)==curPage)?"current":"";
+  pageStr += '<a href="javascript:;" class="'+currentClass+'" onclick="doGo('+(i+1)+')">'+(i+1)+'</a>';
+ }
+}else if(pageCount > 9 && (curPage + 4) <= pageCount && (curPage - 4) > 0){
+ for(var i=(curPage - 3);i<(curPage + 4);i++){
+  var currentClass = ((i+1)==curPage)?"current":"";
+  pageStr += '<a href="javascript:;" class="'+currentClass+'" onclick="doGo('+(i+1)+')">'+(i+1)+'</a>';
+ }
+}else{
+ for(var i=(pageCount - 8);i<(pageCount);i++){
+  var currentClass = ((i+1)==curPage)?"current":"";
+  pageStr += '<a href="javascript:;" class="'+currentClass+'" onclick="doGo('+(i+1)+')">'+(i+1)+'</a>';
+ }
+}
+if(curPage < pageCount){
+ pageStr += '<a href="javascript:;" onclick="doGo('+(curPage+1)+')" class="p" title="后一页">»</a>';
+}
+pageStr += "<span>到第<input name=\"\" type=\"text\" id=\"ymz\">页 <a href=\"#\"  onclick=\"goto_ymz()\">确定</a></span>";
+pageStr += "</div>";
+var pageStr1 = "<div class=\"mobilemore clearfix\">";
+if(pageCount>1){
+ pageStr1 += '<a href="javascript:;" class="prev" title="上一页" onclick="doGo('+(curPage-1)+');">上一页</a>';
+}
+if(curPage < pageCount){
+ pageStr1 += '<a href="javascript:;" onclick="doGo('+(curPage+1)+')" class="next" title="下一页">下一页</a>';
+}
+pageStr1 += "</div>";
+document.write(pageStr);
+document.write(pageStr1);
+</script><div class="pager"><a href="javascript:;" class="p" title="前一页" onclick="doGo(0);">«</a><a href="javascript:;" class="current" onclick="doGo(1)">1</a><a href="javascript:;" class="" onclick="doGo(2)">2</a><a href="javascript:;" class="" onclick="doGo(3)">3</a><a href="javascript:;" class="" onclick="doGo(4)">4</a><a href="javascript:;" class="" onclick="doGo(5)">5</a><a href="javascript:;" class="" onclick="doGo(6)">6</a><a href="javascript:;" class="" onclick="doGo(7)">7</a><a href="javascript:;" class="" onclick="doGo(8)">8</a><a href="javascript:;" class="" onclick="doGo(9)">9</a><a href="javascript:;" onclick="doGo(2)" class="p" title="后一页">»</a><span>到第<input name="" id="ymz" type="text">页 <a href="#" onclick="goto_ymz()">确定</a></span></div><div class="mobilemore clearfix"><a href="javascript:;" class="prev" title="上一页" onclick="doGo(0);">上一页</a><a href="javascript:;" onclick="doGo(2)" class="next" title="下一页">下一页</a></div>
+<script type="text/javascript">
+function doGo(jumpvalue){
+  if(jumpvalue<1 || jumpvalue>22)
+   return;
+  var urlstr = window.location.href;  
+  var urlColumnId = urlstr.substr(urlstr.indexOf('#')+1,8);
+  urlColumnId = urlColumnId.replace("/","");
+  if(1==jumpvalue){
+    urlstr = urlstr.substr(0,urlstr.lastIndexOf('/')+1)+'index.html';
+ }else{
+  urlstr = urlstr.substr(0,urlstr.lastIndexOf('/')+1)+'index_'+jumpvalue+'.html';
+ }
+   window.location.href = urlstr;
+}
+function goto_ymz(){
+ jumpvalue0 = $('#ymz').val();
+ if(jumpvalue0<1 || jumpvalue0>22)
+   return;
+ var urlstr0 = window.location.href;  
+ if(1==jumpvalue0){
+  urlstr0 = urlstr0.substr(0,urlstr0.lastIndexOf('/')+1)+'index.html';
+ }else{
+  urlstr0 = urlstr0.substr(0,urlstr0.lastIndexOf('/')+1)+'index_'+jumpvalue0+'.html';
+ }
+   window.location.href = urlstr0;
+}
+</script>
+<p style="display:none">
+<span style="font-size:12px">
+		共<b>440</b>条&nbsp;&nbsp;
+		分<b>22</b>页&nbsp;&nbsp;
+		当前&nbsp;第<b>1</b>页&nbsp;&nbsp;
+		 <font color="#C0C0C0">首页</font>
+		 <font color="#C0C0C0">上一页</font>
+		 <a href="http://news.tsinghua.edu.cn/publish/thunews/9648/index_2.html"><font color="#000000">下一页</font></a>
+		 <a href="http://news.tsinghua.edu.cn/publish/thunews/9648/index_22.html"><font color="#000000">末页</font></a>
+</span></p>
+<!--<a id="mobilemore" class="mobilemore" href="javascript:;">... 加载更多 ...</a>-->    </section>
+ <section class="colunm2">
+       <section class="mod">
+        <h2><a href="http://news.tsinghua.edu.cn/publish/thunews/9652/index.html" class="more" target="_blank">更多 ›</a><span class="iconwraper"><i class="thunews-picture-o"></i></span>图说清华</h2>
+            <div class="slidegallery" role="toolbar">
+    <ul id="thunews_tsqh" class="slick-initialized slick-slider slick-dotted"><div class="sliderbutton prev slick-arrow" style="display: none;"><i class="thunews-angle-left"></i></div>
+    
+                <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1450px; transform: translate3d(-290px, 0px, 0px);" role="listbox"><li class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 290px;" tabindex="-1"><a href="http://news.tsinghua.edu.cn/publish/thunews/9652/2016/20161115134238751540136/20161115134238751540136_.html" title="【组图】清华园之“唯月与秋不可辜负”" target="_blank" tabindex="-1"><img src="thNews_files/20161115143837264772377.jpg"><div><b></b><span>【组图】清华园之“唯月与秋不可辜负”</span></div></a></li><li class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 290px;" tabindex="-1" role="option" aria-describedby="slick-slide00"><a href="http://news.tsinghua.edu.cn/publish/thunews/9652/2016/20161125150707639725736/20161125150707639725736_.html" title="【组图】清华美院教师的14件作品亮相中华史诗美术大展" target="_blank" tabindex="0"><img src="thNews_files/20161125152739964539763.jpg"><div><b></b><span>【组图】清华美院教师的14件作品亮相中华史诗美术大展</span></div></a></li><li class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 290px;" tabindex="-1" role="option" aria-describedby="slick-slide01"><a href="http://news.tsinghua.edu.cn/publish/thunews/9652/2016/20161121143815894889512/20161121143815894889512_.html" title="【组图】初冬的雪" target="_blank" tabindex="-1"><img src="thNews_files/20161121144129564363413.jpg"><div><b></b><span>【组图】初冬的雪</span></div></a></li><li class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 290px;" tabindex="-1" role="option" aria-describedby="slick-slide02"><a href="http://news.tsinghua.edu.cn/publish/thunews/9652/2016/20161115134238751540136/20161115134238751540136_.html" title="【组图】清华园之“唯月与秋不可辜负”" target="_blank" tabindex="-1"><img src="thNews_files/20161115143837264772377.jpg"><div><b></b><span>【组图】清华园之“唯月与秋不可辜负”</span></div></a></li><li class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 290px;" tabindex="-1"><a href="http://news.tsinghua.edu.cn/publish/thunews/9652/2016/20161125150707639725736/20161125150707639725736_.html" title="【组图】清华美院教师的14件作品亮相中华史诗美术大展" target="_blank" tabindex="-1"><img src="thNews_files/20161125152739964539763.jpg"><div><b></b><span>【组图】清华美院教师的14件作品亮相中华史诗美术大展</span></div></a></li></div></div><div class="sliderbutton next slick-arrow" style="display: none;"><i class="thunews-angle-right"></i></div><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none" role="button" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01" class=""><button type="button" data-role="none" role="button" tabindex="0">2</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02" class=""><button type="button" data-role="none" role="button" tabindex="0">3</button></li></ul></ul>
+          </div>
+      </section>
+         <section class="mod withborder">
+        <h2><a href="http://tv.tsinghua.edu.cn/" class="more" target="_blank">更多 ›</a><span class="iconwraper"><i class="thunews-play-circle"></i></span>精彩视频</h2>
+       <ul class="promvideolist clearfix" id="thunews_jcsp">
+          
+        <li><figure><a class="promvideo" href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161104095847240657364/20161104095847240657364_.html" target="_blank"><b></b><img src="thNews_files/20161104095907452103988.jpg"></a><figcaption><a href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161104095847240657364/20161104095847240657364_.html" target="_blank">《我和我的祖国》</a></figcaption> </figure></li><li><figure><a class="promvideo" href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161102110248356411380/20161102110248356411380_.html" target="_blank"><b></b><img src="thNews_files/20161102110259825134610.jpg"></a><figcaption><a href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161102110248356411380/20161102110248356411380_.html" target="_blank">学术新秀 跨界创业——访谈北京锐思利普有限公司执行...</a></figcaption> </figure></li><li><figure><a class="promvideo" href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161019100234382170055/20161019100234382170055_.html" target="_blank"><b></b><img src="thNews_files/20161019100958870261601.jpg"></a><figcaption><a href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161019100234382170055/20161019100234382170055_.html" target="_blank">《永远在路上》 第一集 人心向背</a></figcaption> </figure></li><li><figure><a class="promvideo" href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161009125816789573433/20161009125816789573433_.html" target="_blank"><b></b><img src="thNews_files/20161009130025907229772.jpg"></a><figcaption><a href="http://tv.tsinghua.edu.cn/publish/video/10162/2016/20161009125816789573433/20161009125816789573433_.html" target="_blank">音乐是我最古老的朋友——访谈著名音乐家，土木系老校...</a></figcaption> </figure></li></ul>
+      </section>
+        <section class="mod withborder">
+        <h2 class="red"><span class="iconwraper"><i class="thunews-line-chart"></i></span>近期热点</h2>
+       <ul class="newslist clearfix" id="resText">
+   
+        <li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.18<i class="thunews-eye"></i>5925</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161118211238375604661/20161118211238375604661_.html" title="“可扩展大气动力模拟”联合成果获高性能计算应用领域“戈登·贝尔”奖" target="_blank">“可扩展大气动力模拟”联合成果获高性能计算应用领域“戈登·贝尔”奖</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.20<i class="thunews-eye"></i>3617</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161120214925214249640/20161120214925214249640_.html" title="清华大学提供总体技术的国家安全指挥控制系统为厄瓜多尔提供重要安全保障" target="_blank">清华大学提供总体技术的国家安全指挥控制系统为厄瓜多尔提供重要安全保障</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.25<i class="thunews-eye"></i>3024</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161125111440926399642/20161125111440926399642_.html" title="清华航院李群仰课题组等揭示超薄二维材料摩擦演化之谜" target="_blank">清华航院李群仰课题组等揭示超薄二维材料摩擦演化之谜</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.25<i class="thunews-eye"></i>2716</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161125135154662946034/20161125135154662946034_.html" title="清华大学5位教师9位校友获选2017年度国际电子电气工程师协会会士" target="_blank">清华大学5位教师9位校友获选2017年度国际电子电气工程师协会会士</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.22<i class="thunews-eye"></i>2708</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10512/2016/20161122202918632829820/20161122202918632829820_.html" title="清华大学举办全校干部学习班 深入学习贯彻学习党的十八届六中全会精神" target="_blank">清华大学举办全校干部学习班 深入学习贯彻学习党的十八届六中全会精神</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.19<i class="thunews-eye"></i>1750</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161119185042936186107/20161119185042936186107_.html" title="陈旭会见英国埃克塞特大学校长史蒂夫·史密斯爵士" target="_blank">陈旭会见英国埃克塞特大学校长史蒂夫·史密斯爵士</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.24<i class="thunews-eye"></i>1198</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10512/2016/20161124091109160895616/20161124091109160895616_.html" title="清华学子走进西柏坡革命圣地" target="_blank">清华学子走进西柏坡革命圣地</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.21<i class="thunews-eye"></i>962</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161121143815894889512/20161121143815894889512_.html" title="【组图】初冬的雪" target="_blank">【组图】初冬的雪</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.22<i class="thunews-eye"></i>946</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161122205024920408035/20161122205024920408035_.html" title="陈旭会见中国国民党副主席胡志强" target="_blank">陈旭会见中国国民党副主席胡志强</a></li><li><div class="thumb"><i class="thunews-clock-o"></i>2016.11.19<i class="thunews-eye"></i>882</div><a href="http://news.tsinghua.edu.cn/publish/thunews/10303/2016/20161119114630041799904/20161119114630041799904_.html" title="邱勇、陈旭到北京协和医院进行工作交流  共商深化校院合作" target="_blank">邱勇、陈旭到北京协和医院进行工作交流  共商深化校院合作</a></li></ul>
+      </section>
+    </section>
+ 
+ <script>
+ jQuery.ajaxSettings.async = false; 
+ getResData1();
+ function getResData1(){
+     jQuery.getJSON("/publish/thunews/thunews_tsqh.json?r="+Math.random(), function(data){
+       //$("#thunews_tsqh").empty();
+       jQuery.each(data,function(index){
+  
+      var html = "<li>";
+      html += "<a href=\""+data[index]["href"]+"\" title=\"" +data[index]["span"]+ "\" target=\"_blank\">";
+   html += "<img src=\""+data[index]["src"]+"\">";
+   html += "<div><b></b>";
+   html += "<span>"+data[index]["span"]+"</span>"
+      html += "</div></a></li>";
+      $("#thunews_tsqh").append(html);
+       });
+     });
+   getResData3();
+      };
+function getResData3(){
+     jQuery.getJSON("/publish/thunews/thunews_jcsp.json?r="+Math.random(), function(data){
+       //$("#thunews_jcsp").empty();
+       jQuery.each(data,function(index){
+  
+      var html = "<li><figure>";
+   html += "<a class=\"promvideo\" href=\""+data[index]["href"]+"\" target=\"_blank\">";
+   html += "<b></b><img src=\""+data[index]["src"]+"\"></a>";
+   html += "<figcaption><a href=\""+data[index]["href"]+"\"  target=\"_blank\">"+data[index]["span"]+"</a></figcaption>";
+   html += " </figure></li>";
+  $("#thunews_jcsp").append(html);
+       });
+     });
+   getResData4();
+      };   
+   
+ function getResData4(){
+     jQuery.getJSON("/publish/thunews/thunews_jqrd.json?r="+Math.random(), function(data){
+       //$("#resText").empty();
+       jQuery.each(data,function(entryIndex,entry){
+  var datet = entry["datetime"];
+  datet = datet.replace(/-/g,'.');
+      var html = "<li>";
+   html +="<div class='thumb'><i class='thunews-clock-o'></i>" + datet; 
+   html +="<i class='thunews-eye'></i>" + entry["dotnum"]; 
+   html += "</div>";
+   html += "<a href=\""+entry["href"]+"\" title=\"" +entry["title"]+ "\" target=\"_blank\">" + entry["title"] + "</a>"
+      html += "</li>";
+      $("#resText").append(html);
+       });
+     });
+   test();
+      };
+  
+ function test(){
+    $('.slidegallery ul').slick({
+   infinite: true,
+   slidesToShow: 1,
+   slidesToScroll: 1,
+   autoplay: true,
+   centerMode: false,
+   dots:true,
+   prevArrow:"<div class=\"sliderbutton prev\"><i class=\"thunews-angle-left\"></i></div>",
+   nextArrow:"<div class=\"sliderbutton next\"><i class=\"thunews-angle-right\"></i></div>"
+  });
+ $('.slidegallery .sliderbutton.prev,.slidegallery .sliderbutton.next').hide();
+ }
+ </script>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  </div>
+</div>
+<footer>
+ <div class="mainWrap clearfix">
+     <section>
+         <div class="thulogo"><img src="thNews_files/thulogo.png"></div>
+            <div class="copyright"><span><a href="http://news.tsinghua.edu.cn/publish/thunews/10274/index.html">网站地图</a>　│　<a href="http://news.tsinghua.edu.cn/publish/thunews/10225/index.html">关于我们</a>　│　<a href="http://news.tsinghua.edu.cn/publish/thunews/10217/index.html">友情链接</a>　│　<a href="http://www.tsinghua.edu.cn/publish/newthu/newthu_cnt/intothu/picture/map.png" target="_blank">清华地图</a></span>
+            清华大学新闻中心版权所有，清华大学新闻网编辑部维护，电子信箱:news@tsinghua.edu.cn<br>
+Copyright 2001-2016 news.tsinghua.edu.cn. All rights reserved.
+            </div>
+        </section>
+    </div></footer>
+
+
+</body></html>
